@@ -15,6 +15,7 @@ using Tribal.CreditLine.Data.Repositories;
 using Tribal.CreditLineRequests.Domain.CreditLines.Repositories;
 using Tribal.CreditLineRequests.Domain.CreditLines.Services;
 using Tribal.CreditLineRequests.Services;
+using Tribal.CreditLine.Api.Services;
 
 namespace Tribal.CreditLineRequests.Api
 {
@@ -74,13 +75,15 @@ namespace Tribal.CreditLineRequests.Api
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tribal Credit Line API"));
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseAuthorization();
+
+            InitialMigration.MigrationInitialisation(app);
 
             app.UseEndpoints(endpoints =>
             {
