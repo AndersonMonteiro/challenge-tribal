@@ -49,7 +49,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
     "cashBalance": 900,
     "monthlyRevenue": 1000,
     "requestedCreditLine": 200,
-    "requestedDate": "2022-02-20T21:32:59.860Z"
+    "requestedDate": "2022-02-27T21:32:59.860Z"
 }' 'http://localhost:5001/v1/credit-line-requests'
 ```
 
