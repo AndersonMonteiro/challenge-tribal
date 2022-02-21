@@ -10,7 +10,6 @@ namespace Fintech.CreditLine.Api.Filters
         {
             if (!context.ModelState.IsValid)
             {
-                //context.Result = new BadRequestObjectResult(context.ModelState);
                 var errors = context.ModelState.Values.Where(v => v.Errors.Count > 0)
                         .SelectMany(v => v.Errors)
                         .Select(v => v.ErrorMessage)

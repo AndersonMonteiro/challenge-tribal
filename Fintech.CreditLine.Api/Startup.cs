@@ -75,8 +75,6 @@ namespace Fintech.CreditLineRequests.Api
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fintech Credit Line API"));
 
-            // app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseMiddleware<ErrorHandlerMiddleware>();
